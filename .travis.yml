@@ -8,7 +8,7 @@ before_install:
 scripts:
   - docker run -e CI=true hardieahmed/react-test npm test
 
-after_install:
+after_success:
   - docker build -t hardieahmed/multi-client ./client
   - docker build -t hardieahmed/multi-nginx ./nginx
   - docker build -t hardieahmed/multi-server ./server
