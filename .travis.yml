@@ -13,3 +13,11 @@ after_install:
   - docker build -t hardieahmed/multi-nginx ./nginx
   - docker build -t hardieahmed/multi-server ./server
   - docker build -t hardieahmed/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to the docker hub
+  - docker push hardieahmed/multi-client
+  - docker push hardieahmed/multi-nginx
+  - docker push hardieahmed/multi-server
+  - docker push hardieahmed/multi-worker
+  
