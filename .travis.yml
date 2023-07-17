@@ -21,6 +21,7 @@ after_success:
   - docker push hardieahmed/multi-server
   - docker push hardieahmed/multi-worker
   
+  #AWS related configurations
   deploy:
     provider: elasticbeanstalk
     region: 'eu-north-1'
