@@ -21,15 +21,14 @@ after_success:
   - docker push hardieahmed/multi-server
   - docker push hardieahmed/multi-worker
   
-  #AWS related configurations
-  deploy:
-    provider: elasticbeanstalk
-    region: 'eu-north-1'
-    app: 'multi-docker'
-    env: 'Multi-docker-env-1'
-    bucket_name: 'elasticbeanstalk-eu-north-1-134777723064'
-    bucket_path: 'docker-multi'
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-north-1'
+  app: 'multi-docker'
+  env: 'Multi-docker-env-1'
+  bucket_name: 'elasticbeanstalk-eu-north-1-134777723064'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
